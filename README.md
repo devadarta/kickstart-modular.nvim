@@ -1,3 +1,15 @@
+# Custom kickstart-modular.nvim config
+
+My personal neovim config. This is a fork from [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim).  
+
+## Changes
+* Added custom options and keymaps in the end of each file
+* Created file `/lua/autocmds.lua` for better separation of responsibilities
+* Created file `/lua/custom/utils.lua` with functions that are used in others files, such as keymaps
+* Custom plugins in `custom/plugins/init.lua`
+
+Bellow is the original README of the project for reference.
+
 # kickstart-modular.nvim
 
 ## Introduction
