@@ -17,6 +17,7 @@ return {
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
+      preset = 'helix',
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.o.timeoutlen
       delay = 0,
@@ -59,9 +60,18 @@ return {
 
       -- Document existing key chains
       spec = {
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]oggle' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        {
+          '<leader>b',
+          group = '[b] Buffers',
+          expand = function()
+            return require('which-key.extras').expand.buf()
+          end,
+        },
+        { '<leader>h', group = '[h] Git Hunk', mode = { 'n', 'v' } },
+        { '<leader>r', icon = '' },
+        { '<leader>s', group = '[s] Search' },
+        { '<leader>t', group = '[t] Toggle/Tabs' },
+        { '<leader>w', group = '[w] Write window' },
       },
     },
   },
