@@ -2,15 +2,15 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-
-require 'custom.config'
-
 return {
   {
     'folke/noice.nvim',
     event = 'VeryLazy',
     opts = {
       -- add any options here
+      presets = {
+        command_palette = true, -- On the top
+      },
     },
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
