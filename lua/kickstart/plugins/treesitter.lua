@@ -20,6 +20,8 @@ return {
         'python',
         'javascript',
         'typescript',
+        'xml',
+        'json',
       },
       -- Autoinstall languages that are not installed
       auto_install = true,
