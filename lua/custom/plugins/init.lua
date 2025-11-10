@@ -3,11 +3,10 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  {
+  { -- Popup commands like cmd (:) search (/) and others
     'folke/noice.nvim',
     event = 'VeryLazy',
     opts = {
-      -- add any options here
       presets = {
         command_palette = true, -- On the top
       },
@@ -21,12 +20,49 @@ return {
       'rcarriga/nvim-notify',
     },
   },
-  {
+
+  { -- Colorize the text background according to HTML/RGB/Name/... color. Ex: #a4dd82
     'catgoose/nvim-colorizer.lua',
     event = 'VeryLazy',
     opts = {
       lazy_load = true,
-      -- other setup options
     },
   },
+
+  { -- Nice green Theme
+    'everviolet/nvim',
+    name = 'evergarden',
+    priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
+    opts = {
+      theme = {
+        variant = 'fall', -- 'winter'|'fall'|'spring'|'summer'
+        accent = 'green',
+      },
+      editor = {
+        transparent_background = false,
+        sign = { color = 'none' },
+        float = {
+          color = 'mantle',
+          solid_border = false,
+        },
+        completion = {
+          color = 'surface0',
+        },
+      },
+    },
+    config = function()
+      vim.cmd.colorscheme 'evergarden-winter'
+    end,
+  },
+
+  -- { -- Nice night dark blue color
+  --   'bluz71/vim-nightfly-colors',
+  --   name = 'nightfly',
+  --   lazy = false,
+  --   priority = 1000,
+  --   -- config = function()
+  --   --vim.cmd.colorscheme 'nightfly'
+  --   -- end,
+  -- },
+  --
 }
