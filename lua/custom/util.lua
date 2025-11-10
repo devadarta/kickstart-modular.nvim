@@ -4,13 +4,12 @@
 local M = {}
 
 function M.close_or_quit()
-  -- If has windows opened, close the window
-  if #vim.api.nvim_list_wins() > 1 then
+  -- This was necessary because the plugin Noice create window to show the message and therefore function vim.api.nvim_list_wins() doesn't work properly
+  xpcall(function()
     vim.cmd 'close'
-  else
-    -- If is the last window, quit the vim
+  end, function()
     vim.cmd 'quit'
-  end
+  end)
 end
 
 -- ===========================================================================
