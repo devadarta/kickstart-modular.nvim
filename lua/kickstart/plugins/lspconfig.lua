@@ -235,6 +235,19 @@ return {
             },
           },
         },
+
+        pylsp = {
+          cmd = { 'pylsp' },
+          filetypes = { 'python' },
+          root_markers = {
+            'pyproject.toml',
+            'setup.py',
+            'setup.cfg',
+            'requirements.txt',
+            'Pipfile',
+            '.git',
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
