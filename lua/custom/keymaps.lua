@@ -66,3 +66,5 @@ end
 -- Moving
 vim.keymap.set('n', '<A-S-l>', util.move_tab_right, vim.tbl_extend('force', opts, { desc = 'Move TAB Right' }))
 vim.keymap.set('n', '<A-S-h>', util.move_tab_left, vim.tbl_extend('force', opts, { desc = 'Move TAB left' }))
+
+vim.keymap.set('i', '<Tab>', function() require('custom.tabout').smart_tab() end)
