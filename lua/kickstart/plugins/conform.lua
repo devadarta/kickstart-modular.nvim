@@ -10,6 +10,10 @@ require('conform').setup {
       lua = true,
       python = true,
       javascript = true,
+      html = true,
+      css = true,
+      sh = true,
+      bash = true,
     }
     if enabled_filetypes[vim.bo[bufnr].filetype] then
       return { timeout_ms = 500 }
@@ -28,7 +32,18 @@ require('conform').setup {
     --
     -- You can use 'stop_after_first' to run the first available formatter from the list
     javascript = { 'prettierd', 'prettier', stop_after_first = true },
+
     lua = { 'stylua' },
+
+    typescript = { 'prettierd', 'prettier', stop_after_first = true },
+
+    html = { 'prettier' },
+
+    css = { 'prettier' },
+
+    json = { 'prettier' },
+
+    sh = { 'shtmt' },
   },
 }
 

@@ -105,16 +105,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
+  pyright = {},
   -- rust_analyzer = {},
   --
   -- Some languages (like typescript) have entire language plugins that can be useful:
   --    https://github.com/pmizio/typescript-tools.nvim
   --
   -- But for many setups, the LSP (`ts_ls`) will work just fine
-  -- ts_ls = {},
+  ts_ls = {},
 
   stylua = {}, -- Used to format Lua code
+
+  html = {}, -- HTML
+
+  cssls = {}, -- CSS
+
+  bashls = {}, -- Bash
+
+  ruff = {}, -- Python
 
   -- Special Lua Config, as recommended by neovim help docs
   lua_ls = {
@@ -171,6 +179,16 @@ require('mason').setup {}
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
   -- You can add other tools here that you want Mason to install
+
+  'stylua',
+
+  'ruff',
+
+  'prettierd',
+
+  'prettier',
+
+  'shfmt',
 })
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
