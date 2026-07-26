@@ -1,0 +1,23 @@
+-- local opts = { noremap = true, silent = true }
+--
+-- local function get_dir(full_path)
+--   if vim.fn.isdirectory(full_path) == 0 then return vim.fn.fnamemodify(full_path, ':h') end
+--   return full_path
+-- end
+--
+-- -- controle se o neotree está aberto ou não
+-- Is_neotree_open = false
+-- vim.keymap.set('n', '<leader>e', function()
+--   if Is_neotree_open then
+--     vim.cmd 'Neotree close'
+--   else
+--     -- local full_path =
+--     local path = get_dir(vim.fn.getcwd())
+--     local current_file = vim.fn.expand '%:p'
+--     vim.cmd('Neotree float reveal=true dir=' .. path .. ' reveal_file=' .. current_file)
+--   end
+--   Is_neotree_open = not Is_neotree_open
+-- end, opts)
+
+vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle Neo-tree', silent = true })
+-- vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })

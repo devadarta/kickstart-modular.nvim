@@ -8,6 +8,7 @@ wk.add {
   { '<leader>w', group = '[w] Write (save) window' },
   { '<leader>q', desc = '[q] Open diagnostic Quickfix list' },
   { '<leader>f', desc = '[f] Format buffer' },
+  { '<leader><Tab>', group = '[Tab]s' },
   -- {
   --   '<leader>?',
   --   function() require('which-key').show { global = false } end,

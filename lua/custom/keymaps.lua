@@ -50,13 +50,13 @@ vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = 
 local opts = { silent = true }
 
 -- New/Creation
-vim.keymap.set('n', '<leader>ti', ':tabnew<CR>', vim.tbl_extend('force', opts, { desc = 'Insert empty TAB' }))
-vim.keymap.set('n', '<leader>to', util.open_file_tab, { desc = 'Open in new TAB' })
+vim.keymap.set('n', '<leader><Tab>i', ':tabnew<CR>', vim.tbl_extend('force', opts, { desc = 'Insert empty TAB' }))
+vim.keymap.set('n', '<leader><Tab>o', util.open_file_tab, { desc = 'Open in new TAB' })
 
 -- Navigation
 vim.keymap.set('n', '<A-l>', ':tabnext<CR>', vim.tbl_extend('force', opts, { desc = 'Go to next TAB' })) -- Built-in gt
 vim.keymap.set('n', '<A-h>', ':tabprevious<CR>', vim.tbl_extend('force', opts, { desc = 'Go to previous TAB' })) -- Built-in gT
-vim.keymap.set('n', '<leader>tt', 'g<Tab>', vim.tbl_extend('force', opts, { desc = 'Go to last accessed TAB' }))
+vim.keymap.set('n', '<leader><Tab>t', 'g<Tab>', vim.tbl_extend('force', opts, { desc = 'Go to last accessed TAB' }))
 
 -- Quick tab access (Alt + number for first 9 tabs)
 for i = 1, 9 do

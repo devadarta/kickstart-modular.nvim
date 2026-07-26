@@ -9,7 +9,7 @@ require('which-key').setup {
   -- Document existing key chains
   spec = {
     { '<leader>s', group = '[S] Search', mode = { 'n', 'v' } },
-    { '<leader>t', group = '[t] Toggle/Tabs' },
+    { '<leader>t', group = '[t] Toggle' },
     { '<leader>h', group = '[h] Git Hunk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
     { 'gr', group = 'LSP Actions', mode = { 'n' } },
   },
