@@ -19,5 +19,5 @@
 --   Is_neotree_open = not Is_neotree_open
 -- end, opts)
 
-vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle Neo-tree', silent = true })
+vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = '[e] Explorer Neo-tree', silent = true })
 -- vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
