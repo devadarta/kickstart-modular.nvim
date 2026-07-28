@@ -43,7 +43,7 @@ require('conform').setup {
 
     json = { 'prettier' },
 
-    sh = { 'shtmt' },
+    sh = { 'shfmt' },
   },
 }
 
