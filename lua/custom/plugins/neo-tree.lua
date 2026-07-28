@@ -1,23 +1,10 @@
--- local opts = { noremap = true, silent = true }
---
--- local function get_dir(full_path)
---   if vim.fn.isdirectory(full_path) == 0 then return vim.fn.fnamemodify(full_path, ':h') end
---   return full_path
--- end
---
--- -- controle se o neotree está aberto ou não
--- Is_neotree_open = false
+-- Abre no Root Dir (Tenta pegar a raiz do LSP ou fallback para o CWD)
 -- vim.keymap.set('n', '<leader>e', function()
---   if Is_neotree_open then
---     vim.cmd 'Neotree close'
---   else
---     -- local full_path =
---     local path = get_dir(vim.fn.getcwd())
---     local current_file = vim.fn.expand '%:p'
---     vim.cmd('Neotree float reveal=true dir=' .. path .. ' reveal_file=' .. current_file)
---   end
---   Is_neotree_open = not Is_neotree_open
--- end, opts)
+--   local root = vim.lsp.buf.list_workspace_folders()[1] or vim.uv.cwd()
+--   require('neo-tree.command').execute { toggle = true, dir = root }
+-- end, { desc = 'Neo-tree (Root Dir)' })
+--
+-- -- Abre no CWD (Diretório onde o Neovim está rodando)
+-- vim.keymap.set('n', '<leader>E', function() require('neo-tree.command').execute { toggle = true, dir = vim.uv.cwd() } end, { desc = 'Neo-tree (CWD)' })
 
-vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = '[e] Explorer Neo-tree', silent = true })
--- vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
+vim.keymap.set('n', '<leader>e', '<Cmd>Neotree toggle<CR>', { desc = 'Explorer (neo-tree) ', silent = true })

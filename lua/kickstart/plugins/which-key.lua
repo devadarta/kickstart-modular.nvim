@@ -8,9 +8,9 @@ require('which-key').setup {
   icons = { mappings = vim.g.have_nerd_font },
   -- Document existing key chains
   spec = {
-    { '<leader>s', group = '[S] Search', mode = { 'n', 'v' } },
-    { '<leader>t', group = '[t] Toggle' },
-    { '<leader>h', group = '[h] Git Hunk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
+    { '<leader>s', group = 'Search', mode = { 'n', 'v' } },
+    { '<leader>t', group = 'Toggle' },
+    { '<leader>h', group = 'Git Hunk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
     { 'gr', group = 'LSP Actions', mode = { 'n' } },
   },
 }
