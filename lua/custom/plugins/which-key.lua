@@ -4,12 +4,11 @@ wk.setup {
 }
 wk.add {
   { '<leader>e', icon = '󰙅' },
-  { '<leader>f', desc = 'Format buffer' },
   { '<leader>r', icon = '' },
   { '<leader>?', function() require('which-key').show { global = false } end, desc = 'Buffer keymaps (which-key)' },
   -- Groups
   { '<leader>,', group = 'Buffers', expand = function() return require('which-key.extras').expand.buf() end },
   { '<leader>j', group = 'Flash', icon = '󰛕' },
-  { '<leader>w', group = 'Windows' },
-  { '<leader><Tab>', group = 'Tabs' },
+  { '<leader>w', group = 'Window' },
+  { '<leader><Tab>', group = 'Tab' },
 }
