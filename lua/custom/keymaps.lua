@@ -15,9 +15,9 @@ end
 -- [[ WINDOW || BUFFER ]]
 --
 vim.keymap.set('n', '<leader>,,', '<C-^>', { desc = 'Go to last accessed buffer' })
-vim.keymap.set('n', '<leader>-', '<cmd>hsplit<cr>', { desc = 'Split window bellow' })
+vim.keymap.set('n', '<leader>-', '<cmd>split<cr>', { desc = 'Split window bellow' })
 vim.keymap.set('n', '<leader>|', '<cmd>vsplit<cr>', { desc = 'Split window right' })
-vim.keymap.set('n', '<leader>w-', '<cmd>hsplit<cr>', { desc = 'Split window bellow' })
+vim.keymap.set('n', '<leader>w-', '<cmd>split<cr>', { desc = 'Split window bellow' })
 vim.keymap.set('n', '<leader>w|', '<cmd>vsplit<cr>', { desc = 'Split window right' })
 -- Save/quit buffers
 vim.keymap.set('n', '<leader>ww', '<cmd>write<cr>', { desc = 'Save buffer' })
