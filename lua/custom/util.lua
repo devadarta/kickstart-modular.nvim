@@ -5,11 +5,7 @@ local M = {}
 
 function M.close_or_quit()
   -- This was necessary because the plugin Noice create window to show the message and therefore function vim.api.nvim_list_wins() doesn't work properly
-  xpcall(function()
-    vim.cmd 'close'
-  end, function()
-    vim.cmd 'quit'
-  end)
+  xpcall(function() vim.cmd 'close' end, function() vim.cmd 'quit' end)
 end
 
 -- ===========================================================================
@@ -17,17 +13,13 @@ end
 -- ===========================================================================
 function M.open_file_tab()
   vim.ui.input({ prompt = 'File to open in new tab: ', completion = 'file' }, function(input)
-    if input and input ~= '' then
-      vim.cmd('tabnew ' .. vim.fn.fnameescape(input))
-    end
+    if input and input ~= '' then vim.cmd('tabnew ' .. vim.fn.fnameescape(input)) end
   end)
 end
 
 function M.move_tab_right()
   local tab_count = vim.fn.tabpagenr '$'
-  if tab_count < 2 then
-    return
-  end
+  if tab_count < 2 then return end
   if vim.fn.tabpagenr() == tab_count then
     vim.cmd 'tabmove 0'
   else
@@ -37,9 +29,7 @@ end
 
 function M.move_tab_left()
   local tab_count = vim.fn.tabpagenr '$'
-  if tab_count < 2 then
-    return
-  end
+  if tab_count < 2 then return end
   if vim.fn.tabpagenr() == 1 then
     vim.cmd('tabmove ' .. tab_count)
   else
@@ -108,9 +98,7 @@ function M.floating_terminal()
     end
   end
 
-  if not has_terminal then
-    vim.cmd('terminal ' .. (os.getenv 'SHELL' or '/bin/sh'))
-  end
+  if not has_terminal then vim.cmd('terminal ' .. (os.getenv 'SHELL' or '/bin/sh')) end
 
   terminal_state.is_open = true
   vim.cmd 'startinsert'
@@ -140,7 +128,7 @@ function M.bottom_terminal()
   vim.cmd('terminal ' .. (os.getenv 'SHELL' or '/bin/sh')) -- Open terminal on default shell
   vim.cmd 'startinsert' -- Start terminal on Insert Mode
   vim.cmd.wincmd 'J' -- Start terminal on bottom of neovim
-  vim.api.nvim_win_set_height(0, 10) -- Set hight of terminal
+  vim.api.nvim_win_set_height(0, 15) -- Set height of terminal
   -- vim.bo.channel -- Used to get the terminal id to execute some command
 end
 
