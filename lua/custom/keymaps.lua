@@ -56,9 +56,10 @@ vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = 
 --
 local opts = { silent = true }
 
--- New/Creation
+-- New/Creation/Close
 vim.keymap.set('n', '<leader><Tab>i', ':tabnew<CR>', vim.tbl_extend('force', opts, { desc = 'Insert empty Tab' }))
 vim.keymap.set('n', '<leader><Tab>o', util.open_file_tab, { desc = 'Open in new Tab' })
+vim.keymap.set('n', '<leader><Tab>c', ':tabclose<CR>', vim.tbl_extend('force', opts, { desc = 'Close Tab' }))
 
 -- Navigation
 vim.keymap.set('n', '<A-l>', ':tabnext<CR>', vim.tbl_extend('force', opts, { desc = 'Go to next Tab' })) -- Built-in gt
