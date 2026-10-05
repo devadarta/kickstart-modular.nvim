@@ -46,6 +46,18 @@ statusline.setup { use_icons = vim.g.have_nerd_font }
 ---@diagnostic disable-next-line: duplicate-set-field
 statusline.section_location = function() return '%2l:%-2v' end
 
+-- Highlight de TODO, FIXME, HACK, NOTE e códigos de cores hexadecimais
+local hipatterns = require 'mini.hipatterns'
+hipatterns.setup {
+  highlighters = {
+    -- fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+    -- hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+    -- todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+    -- note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+    hex_color = hipatterns.gen_highlighter.hex_color(),
+  },
+}
+
 -- ... and there is more!
 --  Check out: https://github.com/nvim-mini/mini.nvim
 
