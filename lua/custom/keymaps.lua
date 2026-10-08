@@ -12,6 +12,30 @@ for i = 0, 9 do
 end
 
 --
+-- [[ COPY PATH || COPY FILENAME ]]
+--
+vim.keymap.set('n', '<leader>cp', function()
+  vim.fn.setreg('+', vim.fn.expnd '%')
+  print 'Path relativo copiado'
+end, { desc = 'Copiar path relativo' })
+vim.keymap.set('n', '<leader>cP', function()
+  vim.fn.setreg('+', vim.fn.expnd '%:p')
+  print 'Path absoluto copiado'
+end, { desc = 'Copiar path absoluto' })
+vim.keymap.set('n', '<leader>cf', function()
+  vim.fn.setreg('+', vim.fn.expnd '%:t')
+  print 'Nome do arquivo copiado'
+end, { desc = 'Copir nome do arquivo' })
+vim.keymap.set('n', '<leader>cr', function()
+  vim.fn.setreg('+', vim.fn.expnd '%:h')
+  print 'Path relativo (sem nome do arquivo) copiado'
+end, { desc = 'Copiar path relativo sem o nome do arquivo' })
+vim.keymap.set('n', '<leader>c', function()
+  vim.fn.setreg('+', vim.fn.expnd '%:p:h')
+  print 'Path absoluto (sem o nome do arquivo) copiado'
+end, { desc = 'Copiar path absoluto sem o nome do arquivo' })
+
+--
 -- [[ WINDOW || BUFFER ]]
 --
 vim.keymap.set('n', '<leader>,,', '<C-^>', { desc = 'Go to last accessed buffer' })
