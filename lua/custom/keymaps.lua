@@ -15,23 +15,23 @@ end
 -- [[ COPY PATH || COPY FILENAME ]]
 --
 vim.keymap.set('n', '<leader>cp', function()
-  vim.fn.setreg('+', vim.fn.expnd '%')
+  vim.fn.setreg('+', vim.fn.expand '%')
   print 'Path relativo copiado'
 end, { desc = 'Copiar path relativo' })
 vim.keymap.set('n', '<leader>cP', function()
-  vim.fn.setreg('+', vim.fn.expnd '%:p')
+  vim.fn.setreg('+', vim.fn.expand '%:p')
   print 'Path absoluto copiado'
 end, { desc = 'Copiar path absoluto' })
 vim.keymap.set('n', '<leader>cf', function()
-  vim.fn.setreg('+', vim.fn.expnd '%:t')
+  vim.fn.setreg('+', vim.fn.expand '%:t')
   print 'Nome do arquivo copiado'
 end, { desc = 'Copir nome do arquivo' })
 vim.keymap.set('n', '<leader>cr', function()
-  vim.fn.setreg('+', vim.fn.expnd '%:h')
+  vim.fn.setreg('+', vim.fn.expand '%:h')
   print 'Path relativo (sem nome do arquivo) copiado'
 end, { desc = 'Copiar path relativo sem o nome do arquivo' })
 vim.keymap.set('n', '<leader>c', function()
-  vim.fn.setreg('+', vim.fn.expnd '%:p:h')
+  vim.fn.setreg('+', vim.fn.expand '%:p:h')
   print 'Path absoluto (sem o nome do arquivo) copiado'
 end, { desc = 'Copiar path absoluto sem o nome do arquivo' })
 
