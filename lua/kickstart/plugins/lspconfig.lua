@@ -106,7 +106,17 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
 
-  pyright = {},
+  pyright = {
+    settings = {
+      python = {
+        analysis = {
+          -- Destiva avisos que o Ruff já cobre nativamente
+          reportUnusedImport = 'none',
+          reportUnusedVariable = 'none',
+        },
+      },
+    },
+  },
 
   -- tsc = {},
   --
