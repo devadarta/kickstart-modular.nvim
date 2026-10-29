@@ -33,7 +33,7 @@ vk.set('n', '<leader>cr', function()
 end, { desc = 'Copy rel path w/o filename' })
 vk.set('n', '<leader>cR', function()
   vim.fn.setreg('+', vim.fn.expand '%:p:h')
-  print 'Copied the absolut path without filename'
+  print 'Copied the absolute path without filename'
 end, { desc = 'Copy abs path w/o filename' })
 
 --
