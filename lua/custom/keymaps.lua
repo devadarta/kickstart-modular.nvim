@@ -5,6 +5,7 @@
 local util = require 'custom.util'
 local vk = vim.keymap
 
+-- run command
 vk.set('n', '<leader>r', ':', { desc = 'Run command' })
 
 -- z0…z9 to open folds to a certain level
@@ -13,28 +14,20 @@ for i = 0, 9 do
 end
 
 --
+-- [[ Based on Helix editor ]]
+--
+vk.set({'n','v'}, 'gh', '0', { desc = 'Goto line start' })
+vk.set({'n','v'}, 'gl', '$', { desc = 'Goto line end' })
+vk.set({'n','v'}, 'gs', '^', { desc = 'Goto line start non-blank character' })
+
+--
 -- [[ COPY PATH || COPY FILENAME ]]
 --
-vk.set('n', '<leader>cp', function()
-  vim.fn.setreg('+', vim.fn.expand '%')
-  print 'Copied the relative path (with filename)'
-end, { desc = 'Copy relative path' })
-vk.set('n', '<leader>cP', function()
-  vim.fn.setreg('+', vim.fn.expand '%:p')
-  print 'Copied the absolute path (with filename)'
-end, { desc = 'Copy absolute path' })
-vk.set('n', '<leader>cf', function()
-  vim.fn.setreg('+', vim.fn.expand '%:t')
-  print 'Copied the filename'
-end, { desc = 'Copy filename' })
-vk.set('n', '<leader>cr', function()
-  vim.fn.setreg('+', vim.fn.expand '%:h')
-  print 'Copied the relative path without filename'
-end, { desc = 'Copy rel path w/o filename' })
-vk.set('n', '<leader>cR', function()
-  vim.fn.setreg('+', vim.fn.expand '%:p:h')
-  print 'Copied the absolute path without filename'
-end, { desc = 'Copy abs path w/o filename' })
+vk.set('n', '<leader>cp', function() util.run_copy('%','Copied the relative path (with filename)') end, { desc = 'Copy relative path' })
+vk.set('n', '<leader>cP', function() util.run_copy('%:p', 'Copied the absolute path (with filename)') end, { desc = 'Copy absolute path' })
+vk.set('n', '<leader>cf', function() util.run_copy('%:t','Copied the filename') end, { desc = 'Copy filename' })
+vk.set('n', '<leader>cr', function() util.run_copy('%:h', 'Copied the relative path without filename') end, { desc = 'Copy rel path w/o filename' })
+vk.set('n', '<leader>cR', function() util.run_copy('%:p:h', 'Copied the absolute path without filename') end, { desc = 'Copy abs path w/o filename' })
 
 --
 -- [[ WINDOW || BUFFER ]]

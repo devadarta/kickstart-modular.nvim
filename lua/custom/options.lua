@@ -2,6 +2,7 @@
 -- [[ CUSTOM OPTIONS ]]
 -- ===========================================================================
 
+vim.cmd.colorscheme 'catppuccin'
 vim.o.relativenumber = true
 vim.o.sidescrolloff = 10 -- Minimal number of screen characters to keep before and after at the side of the cursor
 vim.o.wrap = false -- Wrap long lines

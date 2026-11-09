@@ -3,6 +3,11 @@
 -- ===========================================================================
 local M = {}
 
+function M.run_copy(exp, msg)
+  vim.fn.setreg('+', vim.fn.expand(exp))
+  print mgs
+end
+
 function M.close_or_quit()
   -- This was necessary because the plugin Noice create window to show the message and therefore function vim.api.nvim_list_wins() doesn't work properly
   xpcall(function() vim.cmd 'close' end, function() vim.cmd 'quit' end)
