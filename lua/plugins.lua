@@ -1,15 +1,15 @@
 -- Load plugin modules in order.
 
-require 'kickstart.plugins.guess-indent'
-require 'kickstart.plugins.gitsigns'
+-- require 'kickstart.plugins.guess-indent'
+-- require 'kickstart.plugins.gitsigns'
 require 'kickstart.plugins.which-key'
 -- require 'kickstart.plugins.tokyonight'
-require 'kickstart.plugins.todo-comments'
-require 'kickstart.plugins.mini'
-require 'kickstart.plugins.telescope'
-require 'kickstart.plugins.lspconfig'
-require 'kickstart.plugins.conform'
-require 'kickstart.plugins.blink-cmp'
+-- require 'kickstart.plugins.todo-comments'
+-- require 'kickstart.plugins.mini'
+-- require 'kickstart.plugins.telescope'
+-- require 'kickstart.plugins.lspconfig'
+-- require 'kickstart.plugins.conform'
+-- require 'kickstart.plugins.blink-cmp'
 require 'kickstart.plugins.treesitter'
 
 -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
@@ -21,7 +21,7 @@ require 'kickstart.plugins.treesitter'
 --  Here are some example plugins that I've included in the Kickstart repository.
 --  Uncomment any of the lines below to enable them (you will need to restart nvim).
 --
-require 'kickstart.plugins.debug'
+-- require 'kickstart.plugins.debug'
 -- require 'kickstart.plugins.indent_line'
 -- require 'kickstart.plugins.lint'
 require 'kickstart.plugins.autopairs'
