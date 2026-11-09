@@ -5,7 +5,7 @@ local M = {}
 
 function M.run_copy(exp, msg)
   vim.fn.setreg('+', vim.fn.expand(exp))
-  print mgs
+  print(msg)
 end
 
 function M.close_or_quit()
